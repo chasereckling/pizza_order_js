@@ -14,9 +14,13 @@ describe('Pizza', function(){
     expect(testPizza.largeSizePrice()).to.equal(20);
   });
 
-  it('returns the price for a pizza with a topping added', function() {
-    var testPizza = new Pizza();
-    testPizza.smallSizePrice();
-    expect(testPizza.addTopping()).to.eql(11);
+  it('returns the toppings for a pizza', function() {
+    var testPizza = new Pizza("meat");
+    expect(testPizza.toppings).to.eql(["meat"]);
+  });
+
+  it('returns the price for a pizza with toppings', function() {
+    var testPizza = new Pizza(["meat"]);
+    expect(testPizza.addTopping()).to.equal(1);
   });
 });
